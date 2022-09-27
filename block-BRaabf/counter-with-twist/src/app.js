@@ -12,7 +12,7 @@ class App extends React.Component {
   handleIncrement = () => {
     this.setState({
       counter:
-        this.state.counter < this.state.maxValue - this.state.step
+        this.state.counter <= this.state.maxValue - this.state.step
           ? this.state.counter + this.state.step
           : this.state.counter,
     });
@@ -25,6 +25,8 @@ class App extends React.Component {
   handleReset = () => {
     this.setState({
       counter: 0,
+      step: 1,
+      maxValue: Infinity,
     });
   };
   handleStep = (value) => {
@@ -47,65 +49,43 @@ class App extends React.Component {
           <div className="step">
             <h3 className="text-center">Steps</h3>
             <div className="flex">
-              <button
-                id="5"
-                className="sqr-btn"
-                onClick={(event) => {
-                  this.handleStep(+event.target.id);
-                }}
-              >
-                5
-              </button>
-              <button
-                id="10"
-                className="sqr-btn"
-                onClick={(event) => {
-                  this.handleStep(+event.target.id);
-                }}
-              >
-                10
-              </button>
-              <button
-                id="15"
-                className="sqr-btn"
-                onClick={(event) => {
-                  this.handleStep(+event.target.id);
-                }}
-              >
-                15
-              </button>
+              {[5, 10, 15].map((step) => {
+                return (
+                  <button
+                    key={step}
+                    id={step}
+                    className={
+                      this.state.step === step ? "active sqr-btn" : "sqr-btn"
+                    }
+                    onClick={(event) => {
+                      this.handleStep(+event.target.id);
+                    }}
+                  >
+                    {step}
+                  </button>
+                );
+              })}
             </div>
           </div>
           <div className="max">
             <h3 className="text-center">Max Value</h3>
             <div className="flex">
-              <button
-                id="200"
-                className="sqr-btn"
-                onClick={(event) => {
-                  this.handleMax(+event.target.id);
-                }}
-              >
-                200
-              </button>
-              <button
-                id="50"
-                className="sqr-btn"
-                onClick={(event) => {
-                  this.handleMax(+event.target.id);
-                }}
-              >
-                50
-              </button>
-              <button
-                id="1000"
-                className="sqr-btn"
-                onClick={(event) => {
-                  this.handleMax(+event.target.id);
-                }}
-              >
-                1000
-              </button>
+              {[15, 100, 200].map((max) => {
+                return (
+                  <button
+                    key={max}
+                    id={max}
+                    className={
+                      this.state.maxValue === max ? "active sqr-btn" : "sqr-btn"
+                    }
+                    onClick={(event) => {
+                      this.handleMax(+event.target.id);
+                    }}
+                  >
+                    {max}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
