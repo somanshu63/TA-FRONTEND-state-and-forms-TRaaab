@@ -1,0 +1,23 @@
+button {
+  font-size: 18px;
+  padding: 8px 12px;
+  background-color: rgb(7, 56, 161);
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 0 5px;
+}
+.flex {
+  text-align: center;
+}
+.displayUI {
+  width: 500px;
+  height: 400px;
+  margin: 3rem auto;
+}
+.displayUI img {
+  width: 100%;
+  height: 100%;
+}
