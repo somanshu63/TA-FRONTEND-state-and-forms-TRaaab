@@ -6,11 +6,14 @@ import pubg from "./assets/pubg.jpeg";
 import tiger from "./assets/tiger.jpg";
 import React from "react";
 
+var images = [cricket, basketball, laptop, phone, pubg, tiger];
+var imagesNames = ["cricket", "basketball", "laptop", "phone", "pubg", "tiger"];
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: "",
+      display: tiger,
     };
   }
   handleChange = (id) => {
@@ -22,54 +25,18 @@ class App extends React.Component {
     return (
       <>
         <div className="flex">
-          <button
-            id={tiger}
-            onClick={(event) => {
-              this.handleChange(event.target.id);
-            }}
-          >
-            tiger
-          </button>
-          <button
-            id={laptop}
-            onClick={(event) => {
-              this.handleChange(event.target.id);
-            }}
-          >
-            laptop
-          </button>
-          <button
-            id={basketball}
-            onClick={(event) => {
-              this.handleChange(event.target.id);
-            }}
-          >
-            basketball
-          </button>
-          <button
-            id={cricket}
-            onClick={(event) => {
-              this.handleChange(event.target.id);
-            }}
-          >
-            cricket
-          </button>
-          <button
-            id={phone}
-            onClick={(event) => {
-              this.handleChange(event.target.id);
-            }}
-          >
-            phone
-          </button>
-          <button
-            id={pubg}
-            onClick={(event) => {
-              this.handleChange(event.target.id);
-            }}
-          >
-            pubg
-          </button>
+          {images.map((image, i) => {
+            return (
+              <button
+                id={image}
+                onClick={(event) => {
+                  this.handleChange(event.target.id);
+                }}
+              >
+                {imagesNames[i]}
+              </button>
+            );
+          })}
         </div>
         <div className="displayUI">
           <img src={this.state.display} alt={this.state.display}></img>
