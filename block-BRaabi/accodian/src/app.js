@@ -6,12 +6,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: "",
+      active: null,
     };
   }
   handleAnswer(id) {
     this.setState({
-      active: id,
+      active: this.state.active === id ? null : id,
     });
   }
   render() {
