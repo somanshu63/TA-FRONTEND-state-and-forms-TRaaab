@@ -35,4 +35,13 @@ body {
 }
 h2 {
   font-size: 40px;
+  color: rgb(241, 71, 100);
+}
+.active {
+  background-color: green;
+}
+button:hover {
+  background-color: rgb(0, 132, 255);
+  box-shadow: 0 0 5px 2px black;
+  cursor: pointer;
 }
