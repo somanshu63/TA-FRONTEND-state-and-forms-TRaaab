@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkalami&family=Fraunces:opsz@9..144&family=Inter+Tight&family=Lato&family=Nunito:wght@200;300;400;500;600;700;800&family=Poppins&family=Potta+One&family=Roboto&family=Source+Sans+Pro&family=Yusei+Magic&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+.alkalami {
+  font-family: "Alkalami", serif;
+}
+.fraunces {
+  font-family: "Fraunces", serif;
+}
+.interTight {
+  font-family: "Inter Tight", sans-serif;
+}
+.lato {
+  font-family: "Lato", sans-serif;
+}
+.nunito {
+  font-family: "Nunito", sans-serif;
+}
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+.pottaOne {
+  font-family: "Potta One", cursive;
+}
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+.sourceSansPro {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.yuseiMagic {
+  font-family: "Yusei Magic", sans-serif;
+}
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#font {
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 2rem;
+  overflow: auto;
+}
+h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 40px;
+  margin: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+.slide-area {
+  height: 15px;
+  border-radius: 5px;
+  background-color: rgba(136, 132, 132, 0.5);
+}
+.slider {
+  background-color: green;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin-top: -5px;
+}
+.width-300 {
+  width: 300px;
+}
+#font h3 {
+  font-size: 24px;
+  margin: 0.5rem;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+.justify-center {
+  justify-content: center;
+}
+#text {
+  font-size: 22px;
+}
+#slider {
+  width: 300px;
+}
+.align-center {
+  align-items: center;
+}
