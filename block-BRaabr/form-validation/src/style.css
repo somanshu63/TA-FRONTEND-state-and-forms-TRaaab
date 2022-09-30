@@ -1,0 +1,33 @@
+.form-control {
+  border-radius: 4px;
+  border: 2px solid blue;
+  outline: none;
+  padding: 4px 8px;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  background-color: white;
+}
+body {
+  background-color: rgb(127, 193, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.form {
+  width: 300px;
+  margin: 2rem auto;
+}
+label {
+  font-size: 20px;
+  margin: 1rem 0 0.4rem 0;
+  display: block;
+}
+.disabled {
+  background-color: lightgray;
+}
+.red {
+  color: red;
+}
+.redb {
+  border-color: red;
+}
