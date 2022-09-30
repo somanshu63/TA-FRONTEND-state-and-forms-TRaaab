@@ -1,0 +1,35 @@
+.form {
+  margin: 4rem 1rem;
+  width: 300px;
+  padding: 1rem;
+  border: 4px solid rgb(255, 0, 128);
+  box-shadow: 0 0 4px 1px black;
+}
+label {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.form-control {
+  display: block;
+  font-size: 18px;
+  padding: 6px 12px;
+  border: 2px solid rgb(146, 88, 240);
+  width: 270px;
+  border-radius: 5px;
+  margin: 0.5rem 0 1rem 0;
+}
+h2 {
+  text-transform: capitalize;
+  font-size: 30px;
+  color: rgb(236, 86, 111);
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.red {
+  color: red;
+}
+.redb {
+  border-color: red;
+}
