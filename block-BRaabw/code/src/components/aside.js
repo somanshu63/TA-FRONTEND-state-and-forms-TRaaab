@@ -3,7 +3,7 @@ import data from "../data.json";
 
 function Aside(props) {
   var sizes = [];
-  data.products.map((product) => {
+  data.products.map((product, i) => {
     return product.availableSizes.forEach((size) => {
       if (!sizes.includes(size)) {
         sizes.push(size);
@@ -31,19 +31,6 @@ function Aside(props) {
       />
       <h2 className="fs-24 margin-1 size-heading">Sizes:</h2>
       <div className="filterSize-list margin-1 flex">
-        <button
-          id="all"
-          onClick={(event) => {
-            props.handleSearch(event.target.id);
-          }}
-          className={
-            props.thisState.size.includes("all")
-              ? "text-upp size-item nobtn white active"
-              : "text-upp size-item nobtn white"
-          }
-        >
-          all
-        </button>
         {sizes.map((size) => {
           return (
             <button
@@ -85,7 +72,10 @@ function Cart(props) {
       <div className="cart-products">
         {props.thisState.cart.map((product, i) => {
           return (
-            <div className="cart-product-item justify-space-between padding-1-0 flex align-center">
+            <div
+              key={i}
+              className="cart-product-item justify-space-between padding-1-0 flex align-center"
+            >
               <div className="flex align-center">
                 <figure>
                   <img src={product.image} alt={product.title}></img>
@@ -103,8 +93,8 @@ function Cart(props) {
               <div>
                 <button
                   id={i}
-                  onClick={(event) => {
-                    props.handleDelete(event.target.id);
+                  onClick={() => {
+                    props.handleDelete(i);
                   }}
                   className="cross-product nobtn fs-18 padding-5px white"
                 >
@@ -116,8 +106,8 @@ function Cart(props) {
                 </p>
                 <button
                   id={i}
-                  onClick={(event) => {
-                    props.decreaseQuantity(event.target.id);
+                  onClick={() => {
+                    props.decreaseQuantity(i);
                   }}
                   className="fs-20 nobtn quantity-update white padding-5px"
                 >
@@ -125,8 +115,8 @@ function Cart(props) {
                 </button>
                 <button
                   id={i}
-                  onClick={(event) => {
-                    props.increaseQuantity(event.target.id);
+                  onClick={() => {
+                    props.increaseQuantity(i);
                   }}
                   className="fs-20 nobtn quantity-update white padding-5px"
                 >
