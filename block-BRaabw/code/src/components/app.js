@@ -6,24 +6,31 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      size: ["all"],
+      size: [],
       cart: [],
     };
   }
+  componentDidMount() {
+    if (localStorage.cart) {
+      this.setState({
+        cart: JSON.parse(localStorage.cart) || [],
+      });
+    }
+    window.addEventListener("beforeunload", this.handleLocalStorage);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("beforeunload", this.handleLocalStorage);
+  }
+
+  handleLocalStorage = () => {
+    localStorage.setItem("cart", JSON.stringify(this.state.cart));
+  };
+
   handleClick = (value, image) => {
     var imageD = document.getElementById(`image${value}`);
     imageD.src = image;
   };
   handleSearch = (value) => {
-    if (value === "all") {
-      this.setState({
-        size: ["all"],
-      });
-    } else {
-      this.setState({
-        size: this.state.size.filter((i) => i !== "all"),
-      });
-    }
     if (this.state.size.includes(value)) {
       this.setState({
         size: this.state.size.filter((i) => i !== value),
@@ -42,14 +49,17 @@ class App extends React.Component {
           product.title === products.title && product.size === products.size
       )
     ) {
-      this.state.cart.find((product) => {
+      const cart = this.state.cart.map((product) => {
         if (
           product.title === products.title &&
           product.size === products.size
         ) {
-          product.quantity = product.quantity + 1;
-          this.forceUpdate();
+          return { ...product, quantity: product.quantity + 1 };
         }
+        return product;
+      });
+      this.setState({
+        cart: cart,
       });
     } else {
       this.setState((prevState) => ({
@@ -59,19 +69,34 @@ class App extends React.Component {
   };
   decreaseQuantity = (index) => {
     if (this.state.cart[index].quantity > 1) {
-      this.state.cart[index].quantity -= 1;
+      var increasedProducts = this.state.cart.map((product, i) => {
+        if (i === index) {
+          return { ...product, quantity: product.quantity - 1 };
+        }
+        return product;
+      });
+      this.setState({
+        cart: increasedProducts,
+      });
     } else if (this.state.cart[index].quantity === 1) {
       this.handleDelete(index);
     }
-    this.forceUpdate();
   };
   increaseQuantity = (index) => {
-    this.state.cart[index].quantity += 1;
-    this.forceUpdate();
+    var increasedProducts = this.state.cart.map((product, i) => {
+      if (i === index) {
+        return { ...product, quantity: product.quantity + 1 };
+      }
+      return product;
+    });
+    this.setState({
+      cart: increasedProducts,
+    });
   };
   handleDelete = (index) => {
-    delete this.state.cart[index];
-    this.forceUpdate();
+    this.setState({
+      cart: this.state.cart.filter((product, i) => i !== index),
+    });
   };
   render() {
     return (

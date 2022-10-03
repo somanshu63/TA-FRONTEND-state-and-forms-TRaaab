@@ -6,8 +6,8 @@ var selectedsize;
 
 function Products(props) {
   products = data.products.filter((product) => {
-    if (props.filter.includes("all")) {
-      return (products = data.products);
+    if (props.filter.length === 0) {
+      return product;
     }
     for (let i = 0; i < props.filter.length; i++) {
       if (product.availableSizes.includes(props.filter[i])) {
