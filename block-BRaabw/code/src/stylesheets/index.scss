@@ -156,10 +156,12 @@ body {
 .text-center {
   text-align: center;
 }
-$blueColor: rgb(13, 78, 192);
-$pinkColor: rgb(161, 43, 163);
+$blueColor: #2b48b2;
+$pinkColor: #f24f71;
 $blackColor: black;
 $whiteColor: white;
+$darkPinkColor: #563d67;
+$darkBlueColor: #283382;
 .pink {
   color: $pinkColor;
 }
@@ -302,10 +304,10 @@ a {
 .btn {
   display: inline-block;
   padding: 8px 12px;
-  background-color: $blueColor;
+  background-color: $darkPinkColor;
   color: $whiteColor;
   border-radius: 6px;
-  border: 3px solid teal;
+  border: 2px solid $pinkColor;
 }
 .text-cap {
   text-transform: capitalize;
@@ -333,17 +335,17 @@ button {
   height: 250px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  border-bottom: 2px dotted teal;
+  border-bottom: 2px dotted $blackColor;
 }
 .product-item:hover {
-  border-color: rgb(255, 252, 54);
+  border-color: $pinkColor;
 }
 .product-item {
   position: relative;
   border-radius: 6px;
   height: 430px;
   text-align: center;
-  border: 4px ridge teal;
+  border: 3px solid rgb(12, 14, 14);
 }
 .product-item .btn {
   position: absolute;
@@ -353,7 +355,8 @@ button {
   cursor: pointer;
 }
 .product-item .btn:hover {
-  background-color: rgb(255, 203, 73);
+  background-color: $pinkColor;
+  border-color: $blueColor;
 }
 .product-item .shipping {
   position: absolute;
@@ -366,12 +369,12 @@ button {
   align-items: center;
   padding: 10px 22px;
   font-size: 10px;
-  background-color: goldenrod;
+  background-color: $darkPinkColor;
   color: white;
 }
 .arrow {
   padding: 6px 8px;
-  background-color: lightgray;
+  background-color: $darkPinkColor !important;
   color: white;
   position: absolute;
   border-radius: 50%;
@@ -395,7 +398,7 @@ button {
 
 // aside
 aside {
-  background-color: teal;
+  background-color: $pinkColor;
   position: fixed;
   right: 0;
   top: 0;
@@ -421,12 +424,12 @@ h1 {
   cursor: pointer;
 }
 .active {
-  background-color: goldenrod !important;
+  background-color: $pinkColor !important;
   color: white;
 }
 
 .size-item:hover {
-  background-color: goldenrod;
+  background-color: $blueColor;
 }
 .size-heading {
   margin-top: 5rem;
@@ -434,10 +437,13 @@ h1 {
 
 //cart
 .cart-icon {
-  background-color: black;
+  background-color: $darkPinkColor;
   position: fixed;
   top: 0;
   right: 0;
+}
+.cart-icon-btn {
+  background-color: $darkPinkColor !important;
 }
 .cart {
   overflow: scroll;
@@ -477,13 +483,15 @@ h1 {
 .checkout-btn {
   width: 92%;
 }
-.cross-product {
-  float: right;
-}
+.cross-product,
 .quantity-update {
   float: right;
+  padding: 2px 5px;
 }
 .nobtn {
-  background-color: black;
+  background-color: $darkPinkColor;
   border: none;
+}
+.cross-product {
+  margin-bottom: 4px;
 }

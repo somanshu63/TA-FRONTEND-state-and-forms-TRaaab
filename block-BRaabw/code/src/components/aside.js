@@ -19,7 +19,7 @@ function Aside(props) {
         }}
         className="cart-icon "
       >
-        <button className="nobtn fs-32 padding-1 golden">
+        <button className="nobtn cart-icon-btn fs-32 padding-1 pink">
           <i className="fa-solid fa-cart-shopping"></i>
         </button>
       </div>
@@ -29,7 +29,7 @@ function Aside(props) {
         increaseQuantity={props.increaseQuantity}
         handleDelete={props.handleDelete}
       />
-      <h2 className="fs-24 margin-1 size-heading">Sizes:</h2>
+      <h2 className="fs-20 margin-1 size-heading">Sizes:</h2>
       <div className="filterSize-list margin-1 flex">
         {sizes.map((size) => {
           return (
@@ -65,8 +65,8 @@ function Cart(props) {
       >
         x
       </button>
-      <h3 className="golden text-cap margin-1 text-center fs-40">
-        Cart <i className="golden fa-solid fa-cart-shopping"></i>
+      <h3 className="pink text-cap margin-1 text-center fs-40">
+        Cart <i className="pink fa-solid fa-cart-shopping"></i>
       </h3>
       <hr></hr>
       <div className="cart-products">
@@ -81,11 +81,11 @@ function Cart(props) {
                   <img src={product.image} alt={product.title}></img>
                 </figure>
                 <div className="cart-product-details">
-                  <h4 className="fs-18 padding-5px teal">{product.title}</h4>
-                  <span className="fs-16 padding-5px white">
+                  <h4 className="fs-18 padding-5px pink">{product.title}</h4>
+                  <span className="fs-16 padding-5px blue">
                     size: {product.size}
                   </span>
-                  <span className="fs-16 padding-5px white">
+                  <span className="fs-16 padding-5px blue">
                     quantity: {product.quantity}
                   </span>
                 </div>
@@ -101,7 +101,7 @@ function Cart(props) {
                   x
                 </button>
                 <br></br>
-                <p className="fs-18 golden rates padding-5px">
+                <p className="fs-18 pink rates padding-5px">
                   ${product.price * product.quantity}
                 </p>
                 <button
@@ -130,8 +130,8 @@ function Cart(props) {
       <div className="checkout">
         <hr></hr>
         <div className="flex align-center justify-space-between">
-          <h4 className="fs-18 teal text-cap padding-1">total</h4>
-          <span className="fs-20 padding-1 golden">
+          <h4 className="fs-18 pink text-cap padding-1">total</h4>
+          <span className="fs-20 padding-1 pink">
             $
             {String(
               props.thisState.cart
@@ -143,7 +143,7 @@ function Cart(props) {
             ).substring(0, 6)}
           </span>
         </div>
-        <button className="fs-24 nobtn padding-1 margin-1 checkout-btn text-cap golden">
+        <button className="fs-24 nobtn padding-1 margin-1 checkout-btn text-cap pink">
           checkout
         </button>
       </div>

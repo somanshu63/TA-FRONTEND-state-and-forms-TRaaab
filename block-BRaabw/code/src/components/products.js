@@ -58,7 +58,7 @@ function Product(props) {
         <i id={props.i} className="fa-solid fa-angle-right"></i>
       </button>
       <div className="product-details padding-1">
-        <h3 className="fs-20 golden text-cap margin-5px">
+        <h3 className="fs-20 pink text-cap margin-5px">
           {props.product.title}
         </h3>
         {props.product.isFreeShipping ? (
@@ -66,7 +66,7 @@ function Product(props) {
         ) : (
           ""
         )}
-        <span className="fs-16 price teal">
+        <span className="fs-16 price black">
           {props.product.currencyFormat} {props.product.price}
         </span>
         <p className="fs-14 size margin-5px">{sizes}</p>

@@ -101,7 +101,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <h1 className="text-center fs-40 golden margin-2">Products</h1>
+        <h1 className="text-center fs-28 pink margin-2">Products</h1>
         <div className="flex">
           <Products
             handleClick={this.handleClick}
