@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+.step {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 8px 1px black;
+}
+.image {
+  width: 30%;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form {
+  padding: 4rem;
+}
+.square {
+  width: 20px;
+  background-color: rgb(235, 233, 233);
+  border-radius: 6px;
+  text-align: center;
+  vertical-align: middle;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+}
+.align-items-center {
+  align-items: center;
+}
+.indexes span {
+  display: inline-flex;
+  margin: 0 2rem 0 0.5rem;
+  font-size: 15px;
+}
+.form hr {
+  margin: 1.3rem 0;
+  width: 107%;
+}
+.stepnum {
+  font-size: 13px;
+  color: gray;
+  text-transform: capitalize;
+}
+.active {
+  background-color: #1788c5;
+  color: white;
+}
+h2 {
+  margin: 0 0 1rem 0;
+}
+.form-control {
+  display: block;
+  padding: 6px 12px;
+  font-size: 18px;
+  border: 2px solid gray;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.form-control:focus {
+  border: 2px solid #1788c5;
+  outline: #1788c5;
+}
+label {
+  display: block;
+  font-size: 15px;
+}
+.width-200 {
+  width: 160px;
+}
+.margin-right {
+  margin-right: 4rem;
+}
+.btn {
+  padding: 18px 24px;
+  font-size: 13px;
+  background-color: #1788c5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  float: right;
+  margin-right: -1.6rem;
+}
+.btn:hover,
+.btnback:hover {
+  color: black;
+  transform: scale(1.2);
+  transition: 1s ease-in-out;
+}
+#choice2 {
+  margin-left: 2rem;
+}
+.btnback {
+  padding: 18px 24px;
+  font-size: 13px;
+  color: #1788c5;
+  border: none;
+  float: right;
+  background-color: white;
+  margin-right: 2rem;
+}
+.btnback:hover,
+.btn:hover {
+  cursor: pointer;
+}
+.float-right {
+  float: right;
+}
+.boy,
+.girl {
+  width: 160px;
+  text-align: center;
+  margin: 0 1rem 1rem 0;
+  border: 2px solid rgb(224, 224, 224);
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: rgb(250, 249, 249);
+}
+.boy img,
+.girl img {
+  width: 70px;
+  height: 50px;
+}
+.displaynone {
+  display: none;
+}
+.margin-1 {
+  margin: 1rem 0;
+}
+#girl:checked ~ .girl,
+#boy:checked ~ .boy {
+  background-color: rgb(208, 208, 255);
+  border-color: #1788c5;
+}
